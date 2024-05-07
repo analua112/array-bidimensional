@@ -4,9 +4,14 @@ let ingredientesLanches = ["Pão, maionese, hambúguer, tomate, alface", "Pão, 
 
 let cardapio = [nomeLanches, precoLanches, ingredientesLanches];
 
-for(i=0;i<cardapio[0].length;i++){
-console.log(cardapio[0][i] + "- R$" + cardapio[1][i] + "- ingredientes" + cardapio[2][i]);
-}
+//Aumenta os preços em 10%
+cardapio[1] = cardapio[1].map((preco)=> (preco + preco*0.1));
 
+//imprime o cardapio
+for(i=0;i<cardapio[0].length;i++){
+    console.log(cardapio[0][i] +
+         "- R$" + cardapio[1][i].toFixed(2) +
+          "- ingredientes: " + cardapio[2][i]);
+}
 //Desafio
 //Criar uma terceira dimensão c/ingredientes de cada lanches
